@@ -28,7 +28,7 @@ def crop_image(image, corners):
     top_left_y = min(ys)
     bot_right_x = max(xs)
     bot_right_y = max(ys)
-    return image[top_left_y:bot_right_y+1, top_left_x:bot_right_x+1]\
+    return image[top_left_y:bot_right_y+1, top_left_x:bot_right_x+1]
 
 def non_zero_list(the_list):
     list_size = len(the_list)

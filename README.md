@@ -54,7 +54,7 @@ LinkRefiner | CTW1500 | - | Used with the General Model | [Click](https://drive.
 #### Run easy-export with pretrained model
 
 ``` (with python >= 3.7)
-segment.py --input=input_dir --output=output_dir --pretrained=model.pth```
+segment.py --input=input_dir --output=output_dir --pretrained=model.pth
 ```
 Keep in mind that all path most be specified relative to the project root.
 

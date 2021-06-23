@@ -48,7 +48,7 @@ for image in images_list:
     print(f'Processing {image}')
     for coord in coordinates:
         segmented_image = new_utils.crop_image(cv_img, coord)
-        cv2.imwrite(f'cropped-{number_counter}.jpg', segmented_image)
+        cv2.imwrite(f'{image_name}-cropped-{number_counter}.jpg', segmented_image)
         number_counter += 1
 
 # Remove anything this code has created as cache

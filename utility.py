@@ -1,4 +1,3 @@
-
 import cv2
 import os
 
@@ -15,11 +14,12 @@ def coordinates_reader(file_path):
 
 def convert_to_jpg(source_folder, destination_folder):
     images_list = os.listdir(source_folder)
-    os.chdir(source_folder)
 
     for image in images_list:
-        img = cv2.imread(image)
+        img = cv2.imread(os.path.join(source_folder, image))
         cv2.imwrite(os.path.join(destination_folder, image[:-3] + 'jpg'), img)
+    
+    return
 
 def crop_image(image, corners):
     xs = [corners[i] for i in range(8) if i % 2 == 0]
@@ -36,3 +36,11 @@ def non_zero_list(the_list):
         if the_list[i] < 0:
             the_list[i] = 1
     return the_list
+
+def create_directory(path):
+    try:
+        os.mkdir(path)
+    except:
+        print('Output folder already exists, skip creating it...')
+
+    return

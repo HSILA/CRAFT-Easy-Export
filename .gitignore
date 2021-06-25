@@ -4,5 +4,6 @@
 *.pth
 *.bmp
 *.jpg
+*.png
 result*
 weights*

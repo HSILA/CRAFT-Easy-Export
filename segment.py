@@ -37,9 +37,10 @@ call(f'python test.py --trained_model={args.pretrained} --test_folder={INPUT_DIR
 CACHE_FULL_DIR = os.path.join(BASE_DIR, 'result')
 
 for image in images_list:
-    print(f'Processing {image_name}')
     
     image_name, _ = path.splitext(image)
+    print(f'Processing {image_name}')
+
     cv_img = cv2.imread(path.join(FULL_INPUT_DIR, image))
     out_dir = os.path.join(OUTPUT_DIR, image_name)
 

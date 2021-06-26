@@ -17,9 +17,8 @@ def convert_to_jpg(source_folder, destination_folder):
 
     for image in images_list:
         img = cv2.imread(os.path.join(source_folder, image))
-        cv2.imwrite(os.path.join(destination_folder, image[:-3] + 'jpg'), img)
-    
-    return
+        image_name, _ = os.path.splitext(image)
+        cv2.imwrite(os.path.join(destination_folder, image_name + '.jpg'), img)
 
 def crop_image(image, corners):
     xs = [corners[i] for i in range(8) if i % 2 == 0]
@@ -41,6 +40,4 @@ def create_directory(path):
     try:
         os.mkdir(path)
     except:
-        print('Output folder already exists, skip creating it...')
-
-    return
+        pass
